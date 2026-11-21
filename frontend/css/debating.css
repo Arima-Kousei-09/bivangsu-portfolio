@@ -1,0 +1,133 @@
+/* =========================================
+   DEBATE & LEADERSHIP
+========================================= */
+
+.debating-section {
+  width: min(1100px, calc(100% - 48px));
+  margin-inline: auto;
+  padding-block: 120px;
+  border-bottom: 1px solid var(--border);
+}
+
+.debating-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 55px;
+}
+
+.debating-index {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+}
+
+.debating-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 80px;
+}
+
+.debating-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+  margin-bottom: 28px;
+}
+
+.debating-title span {
+  color: var(--accent);
+  font-style: italic;
+}
+
+.debating-description {
+  max-width: 600px;
+  color: var(--secondary);
+  font-size: 0.95rem;
+  line-height: 2;
+}
+
+.debating-description p {
+  margin-bottom: 20px;
+}
+
+.debating-roles {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.debating-role {
+  padding: 22px 0;
+  border-top: 1px solid var(--border);
+}
+
+.debating-role-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+
+.debating-role h3 {
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.debating-role .role-date {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  white-space: nowrap;
+}
+
+.debating-role p {
+  color: var(--secondary);
+  font-size: 0.85rem;
+  line-height: 1.8;
+}
+
+.debating-note {
+  margin-top: 45px;
+  padding: 24px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.debating-note p {
+  color: var(--secondary);
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-style: italic;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .debating-section {
+    padding-block: 80px;
+  }
+
+  .debating-grid {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .debating-header {
+    margin-bottom: 35px;
+  }
+}
+
+@media (max-width: 640px) {
+  .debating-section {
+    width: calc(100% - 32px);
+  }
+
+  .debating-role-top {
+    flex-direction: column;
+    gap: 6px;
+  }
+}

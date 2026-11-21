@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Arima's personal archive. An interactive terminal for exploring projects, ideas, and work."
+    />
+
+    <title>Arima | Terminal</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/terminal.css" />
+
+    <script src="js/terminal.js" defer></script>
+  </head>
+
+  <body>
+    <main class="terminal-page">
+      <header class="terminal-header">
+        <div class="terminal-identity">
+          <span class="status-indicator"></span>
+          <span>ARIMA'S PERSONAL ARCHIVE</span>
+        </div>
+
+        <a href="index.html" class="exit-link"> EXIT TERMINAL ↗ </a>
+      </header>
+
+      <section class="terminal-window">
+        <div class="terminal-window-bar">
+          <div class="window-controls">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <span class="window-title">arima@archive: ~</span>
+        </div>
+
+        <div class="terminal-content" id="terminal-content">
+          <div class="terminal-welcome">
+            <pre class="ascii-art">
+    _    ____  ___ __  __    _
+   / \  |  _ \|_ _|  \/  |  / \
+  / _ \ | |_) || || |\/| | / _ \
+ / ___ \|  _ < | || |  | |/ ___ \
+/_/   \_\_| \_\___|_|  |_/_/   \_\
+                    </pre
+            >
+
+            <p class="welcome-title">ARIMA'S PERSONAL ARCHIVE</p>
+
+            <p class="welcome-subtitle">A different way to explore.</p>
+
+            <p class="system-message">System initialised.</p>
+
+            <p class="system-message">
+              Type <span class="command-highlight">help</span>
+              to see available commands.
+            </p>
+          </div>
+
+          <div class="terminal-output" id="terminal-output"></div>
+
+          <form class="terminal-input-line" id="terminal-form">
+            <label for="terminal-input" class="terminal-prompt">
+              arima@archive:~$
+            </label>
+
+            <input
+              type="text"
+              id="terminal-input"
+              name="command"
+              autocomplete="off"
+              autocapitalize="off"
+              spellcheck="false"
+              autofocus
+              aria-label="Enter terminal command"
+            />
+
+            <span class="cursor"></span>
+          </form>
+        </div>
+      </section>
+
+      <footer class="terminal-footer">
+        <span>RUNNING ON CURIOSITY</span>
+        <span>EST. 2026</span>
+      </footer>
+    </main>
+  </body>
+</html>

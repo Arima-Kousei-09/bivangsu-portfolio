@@ -1,0 +1,289 @@
+/* =========================================
+   ARIMA TERMINAL OVERLAY
+========================================= */
+
+.terminal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+  background: rgba(8, 8, 8, 0.96);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 250ms ease,
+    visibility 250ms ease;
+}
+
+/* OPEN STATE */
+
+.terminal-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* TERMINAL WINDOW */
+
+.terminal-window {
+  width: min(100%, 1050px);
+  height: min(780px, 90vh);
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background: #111110;
+  border: 1px solid #30302d;
+
+  transform: translateY(15px) scale(0.99);
+  transition: transform 250ms ease;
+}
+
+.terminal-overlay.is-open .terminal-window {
+  transform: translateY(0) scale(1);
+}
+
+/* TITLE BAR */
+
+.terminal-window-bar {
+  min-height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 18px;
+
+  background: #191918;
+  border-bottom: 1px solid #30302d;
+}
+
+.window-controls {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.window-controls span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #5d5d58;
+}
+
+.window-controls span:first-child {
+  background: #a56e68;
+}
+
+.window-controls span:nth-child(2) {
+  background: #b99a68;
+}
+
+.window-controls span:nth-child(3) {
+  background: #829b75;
+}
+
+.window-title {
+  color: #92918c;
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+}
+
+/* EXIT BUTTON */
+
+.terminal-exit {
+  border: none;
+  background: transparent;
+
+  color: #92918c;
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+
+  cursor: pointer;
+  transition: color 200ms ease;
+}
+
+.terminal-exit:hover {
+  color: #c6a87c;
+}
+
+/* TERMINAL CONTENT */
+
+.terminal-content {
+  flex: 1;
+  min-height: 0;
+
+  padding: 35px;
+
+  overflow-y: auto;
+
+  color: #eae8e2;
+  font-family: "DM Mono", monospace;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.terminal-welcome {
+  margin-bottom: 35px;
+}
+
+.ascii-art {
+  margin-bottom: 25px;
+
+  color: #c6a87c;
+  font-family: "DM Mono", monospace;
+  font-size: clamp(9px, 1.3vw, 13px);
+  line-height: 1.35;
+
+  white-space: pre;
+  overflow-x: auto;
+}
+
+.welcome-title {
+  color: #eae8e2;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+}
+
+.welcome-subtitle {
+  margin-bottom: 25px;
+  color: #92918c;
+}
+
+.system-message {
+  margin-top: 5px;
+  color: #5d5d58;
+  font-size: 12px;
+}
+
+.command-highlight {
+  color: #c6a87c;
+}
+
+/* COMMAND OUTPUT */
+
+.terminal-output {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.command-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.command-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: #eae8e2;
+}
+
+.command-line .prompt {
+  color: #9cae87;
+}
+
+.command-response {
+  color: #92918c;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.command-response .highlight {
+  color: #c6a87c;
+}
+
+.command-response .success {
+  color: #9cae87;
+}
+
+/* INPUT LINE */
+
+.terminal-input-line {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 32px;
+}
+
+.terminal-prompt {
+  flex-shrink: 0;
+  color: #9cae87;
+  font-size: 12px;
+}
+
+.terminal-input-line input {
+  flex: 1;
+  min-width: 0;
+
+  border: none;
+  outline: none;
+  background: transparent;
+
+  color: #eae8e2;
+  font-family: "DM Mono", monospace;
+  font-size: 13px;
+  caret-color: #c6a87c;
+}
+
+/* SCROLLBAR */
+
+.terminal-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.terminal-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.terminal-content::-webkit-scrollbar-thumb {
+  background: #30302d;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 640px) {
+  .terminal-overlay {
+    padding: 10px;
+  }
+
+  .terminal-window {
+    height: 95vh;
+  }
+
+  .terminal-content {
+    padding: 22px 15px;
+    font-size: 12px;
+  }
+
+  .terminal-window-bar {
+    padding-inline: 12px;
+  }
+
+  .ascii-art {
+    font-size: 8px;
+  }
+
+  .terminal-prompt {
+    font-size: 10px;
+  }
+
+  .terminal-input-line input {
+    font-size: 12px;
+  }
+}

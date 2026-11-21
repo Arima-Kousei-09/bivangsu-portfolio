@@ -1,0 +1,152 @@
+/* =========================================
+   CONTACT SECTION
+========================================= */
+
+.contact-section {
+  width: min(1100px, calc(100% - 48px));
+  margin-inline: auto;
+  padding-block: 120px 60px;
+}
+
+.contact-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.contact-index {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+}
+
+.contact-content {
+  max-width: 800px;
+  padding-bottom: 100px;
+}
+
+.contact-intro {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  margin-bottom: 25px;
+}
+
+.contact-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.045em;
+  margin-bottom: 30px;
+}
+
+.contact-title span {
+  display: block;
+  color: var(--accent);
+  font-style: italic;
+}
+
+.contact-description {
+  max-width: 570px;
+  color: var(--secondary);
+  font-size: 0.95rem;
+  line-height: 2;
+  margin-bottom: 55px;
+}
+
+/* CONTACT LINKS */
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  max-width: 650px;
+}
+
+.contact-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  padding: 22px 0;
+  border-top: 1px solid var(--border);
+
+  color: var(--foreground);
+  text-decoration: none;
+
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+
+  transition: color var(--transition);
+}
+
+.contact-link:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.contact-link span:first-child {
+  color: var(--muted);
+  letter-spacing: 0.08em;
+}
+
+.contact-link span:last-child {
+  text-align: right;
+}
+
+.contact-link:hover {
+  color: var(--accent);
+}
+
+/* BOTTOM LINE */
+
+.contact-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+
+  padding-top: 25px;
+  border-top: 1px solid var(--border);
+
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.07em;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+  .contact-section {
+    padding-block: 80px 40px;
+  }
+
+  .contact-header {
+    margin-bottom: 70px;
+  }
+
+  .contact-content {
+    padding-bottom: 70px;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-section {
+    width: calc(100% - 32px);
+  }
+
+  .contact-header {
+    margin-bottom: 55px;
+  }
+
+  .contact-bottom {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .contact-link {
+    font-size: 0.68rem;
+  }
+}
