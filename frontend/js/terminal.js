@@ -2,7 +2,7 @@
 "use strict";
 
 // Backend configuration
-const API_BASE_URL = "http://127.0.0.1:8000";
+const API_BASE_URL = "https://arima-kousei-zcia.onrender.com";
 const TERMINAL_API_URL = `${API_BASE_URL}/api/terminal/execute`;
 
 const MAX_COMMAND_LENGTH = 120;
